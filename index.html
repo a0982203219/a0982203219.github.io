@@ -239,14 +239,15 @@
 
           let text = '';
 
-          text += '姓名:' + name + '\n'
-          text += '手機:' + phone + '\n'
-          text += '信箱:' + email + '\n'
-          text += '內容:' + content + '\n'
+          text += '姓名: ' + name + '\n';
+          text += '手機: ' + phone + '\n';
+          text += '信箱: ' + email + '\n';
+          text += '內容: \n\n' + content + '\n';
 
           $.post(url, {chat_id: -335438324, text: text}, function(data){
             if (data.ok) {
               alert("已收到您的訊息，將近快與您聯絡。");
+              $( "#form" )[0].reset();
             } else {
               alert("發送失敗，請您改用其他方式，謝謝。");
             }
